@@ -51,7 +51,7 @@ function Sitename() {
     return domain;
   };
 
-  var version = '1.0.0';
+  var version = '1.2.0';
   var tldList =
       'https://mxr.mozilla.org/mozilla-central/source/netwerk/dns/effective_tld_names.dat?raw=1';
   var altTldList = 'data/effective_tld_names.dat';

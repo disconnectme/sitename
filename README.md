@@ -1,4 +1,4 @@
-# sitename.js `1.1.0`
+# sitename.js `1.0.0`
 
 Determines a website’s canonical domain name (`disconnect.me`, `abc.net.au`,
 even `byoogle.appspot.com`).
@@ -10,9 +10,13 @@ even `byoogle.appspot.com`).
 <script type="text/javascript">
   var sitename = new Sitename;
 
-  sitename.get('https://disconnect.me/', function(domain) {
-    jQuery('#sitename').html(domain); // sitename.js automagically loads jQuery.
-  });
+  var id = setInterval(function() {
+    if (sitename.isInitialized()) {
+      clearInterval(id);
+      jQuery('#sitename').html(sitename.get('https://disconnect.me/'));
+          // sitename.js automagically loads jQuery.
+    }
+  }, 100);
 </script>
 <span id="sitename">A canonical domain name.</span>
 ```
@@ -25,20 +29,25 @@ A class for determining a website’s canonical domain name.
 
 ## Methods
 
-### {Sitename} get({string} url, {function(string)} callback)
+### {boolean} isInitialized()
 
-Determines a canonical domain name.
-
-#### Parameters
-
-`url`      A website’s absolute URL.
-
-`callback` A continuation, to execute when the method completes, that takes a
-           canonical domain name.
+Indicates whether the reference TLDs are loaded.
 
 #### Return value
 
-The domain object.
+True if the reference TLDs are loaded or false if not.
+
+### {string} get({string} url)
+
+Determines a canonical domain name.
+
+#### Parameter
+
+`url` A website’s absolute URL.
+
+#### Return value
+
+A domain name or IP address.
 
 ## Author
 

@@ -4,7 +4,7 @@
  * <samp>byoogle.appspot.com</samp>).
  * <br />
  * <br />
- * Copyright 2012 Disconnect, Inc.
+ * Copyright 2012, 2013 Disconnect, Inc.
  * <br />
  * <br />
  * This Source Code Form is subject to the terms of the Mozilla Public License,
@@ -44,7 +44,7 @@ function Sitename() {
     return domain;
   };
 
-  var version = '1.3.0';
+  var version = '1.4.0';
   var tldList =
       'https://mxr.mozilla.org/mozilla-central/source/netwerk/dns/effective_tld_names.dat?raw=1';
   var altTldList = 'data/effective_tld_names.dat';
@@ -84,7 +84,7 @@ function Sitename() {
   if (typeof jQuery == undeclared) {
     var script = document.createElement('script');
     script.setAttribute('type', 'text/javascript');
-    script.setAttribute('src', 'vendor/jquery-1.7.2.min.js');
+    script.setAttribute('src', 'vendor/jquery.js');
     script.onload = function() { jQuery.noConflict(); };
     document.head.appendChild(script);
   }

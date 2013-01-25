@@ -1,4 +1,4 @@
-# sitename.js `1.3.0`
+# sitename.js `1.4.0`
 
 Determines a website’s canonical domain name (`disconnect.me`, `abc.net.au`,
 even `byoogle.appspot.com`).
